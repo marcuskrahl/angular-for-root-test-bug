@@ -9,15 +9,25 @@
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
-          "outputs": ["{options.outputPath}"],
+          "outputs": [
+            "{options.outputPath}"
+          ],
           "options": {
             "outputPath": "dist/apps/nx12",
             "index": "apps/nx12/src/index.html",
             "main": "apps/nx12/src/main.ts",
             "polyfills": "apps/nx12/src/polyfills.ts",
             "tsConfig": "apps/nx12/tsconfig.app.json",
-            "assets": ["apps/nx12/src/favicon.ico", "apps/nx12/src/assets"],
-            "styles": ["apps/nx12/src/styles.css"],
+            "assets": [
+              "apps/nx12/src/favicon.ico",
+              "apps/nx12/src/assets"
+            ],
+            "styles": [
+              "apps/nx12/src/styles.css",
+              "node_modules/quill/dist/quill.core.css",
+              "node_modules/quill/dist/quill.bubble.css",
+              "node_modules/quill/dist/quill.snow.css"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -82,7 +92,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/nx12"],
+          "outputs": [
+            "coverage/apps/nx12"
+          ],
           "options": {
             "jestConfig": "apps/nx12/jest.config.js",
             "passWithNoTests": true
@@ -111,7 +123,9 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["apps/nx12-e2e/**/*.{js,ts}"]
+            "lintFilePatterns": [
+              "apps/nx12-e2e/**/*.{js,ts}"
+            ]
           }
         }
       }
