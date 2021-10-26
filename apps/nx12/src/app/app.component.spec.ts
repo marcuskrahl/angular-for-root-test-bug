@@ -1,11 +1,21 @@
+import { NgModule } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
+import { QuillModule } from 'ngx-quill';
 import { AppComponent } from './app.component';
+import { AppModule, OtherComponent } from './app.module';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [AppComponent],
-    }).compileComponents();
+    TestBed.configureTestingModule({
+      imports: [AppModule],
+    });
+    TestBed.overrideModule(AppModule, {
+      remove: {
+        declarations: [OtherComponent],
+      },
+    });
+
+    await TestBed.compileComponents();
   });
 
   it('should create the app', () => {
